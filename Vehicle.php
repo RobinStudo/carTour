@@ -20,10 +20,15 @@ class Vehicle{
         $this->engine = true;
     }
 
+    public function isStart()
+    {
+        return $this->engine;
+    }
+
     public function increaseSpeed()
     {
-        $this->speed += $this->power;
-        if( $this->speed <= 350 ){
+        $this->speed += $this->power * 10;
+        if( $this->speed >= 350 ){
             $this->speed = 350;
         }
 
@@ -32,7 +37,7 @@ class Vehicle{
 
     public function decreaseSpeed()
     {
-        $this->speed -= $this->power;
+        $this->speed -= $this->power * 5;
         if( $this->speed < 0 ){
             $this->speed = 0;
         }
@@ -60,5 +65,10 @@ class Vehicle{
     public function stop()
     {
         $this->engine = false;
+    }
+
+    public function getSpeed()
+    {
+        return $this->speed;
     }
 }
