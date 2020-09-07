@@ -69,8 +69,9 @@ $randomRace->start();
             <li><?php echo $rank->getIdentity(); ?></li>
         <?php } ?>
     </ul>
-
+    
     <h2>Résultats : <?php echo $randomRace->getTrack(); ?></h2>
+    <p>Il y a <?php echo count( $randomRace ); ?> pilotes</p>
     <ul>
         <?php foreach( $randomRace->getRanking() as $rank ){ ?>
             <li><?php echo $rank->getIdentity(); ?></li>
